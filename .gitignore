@@ -1,0 +1,30 @@
+# Python
+__pycache__/
+*.py[cod]
+*.egg-info/
+.venv/
+venv/
+env/
+
+# Сборка .app / .exe
+build/
+dist/
+*.spec
+*.app/
+*.exe
+
+# ОС
+.DS_Store
+Thumbs.db
+
+# Редакторы
+.idea/
+.vscode/
+*.swp
+
+# Временное / данные
+*.log
+*.tmp
+tmp/
+output/
+cache/
