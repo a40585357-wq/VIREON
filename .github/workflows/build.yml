@@ -1,0 +1,74 @@
+name: Build VIREON
+
+on:
+  release:
+    types: [published]
+  workflow_dispatch:
+
+jobs:
+  build-windows:
+    runs-on: windows-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+      - run: |
+          python -m pip install --upgrade pip
+          pip install numpy scipy matplotlib Pillow pyinstaller
+      - run: >
+          pyinstaller --onefile --windowed --name VIREON
+          --add-data "body_organs.png;."
+          --paths "."
+          --hidden-import biosim_part2 --hidden-import biosim_part3 --hidden-import biosim_part4
+          --collect-submodules matplotlib
+          --exclude-module rdkit --exclude-module torch --exclude-module tensorflow
+          --exclude-module sklearn --exclude-module deepchem --exclude-module esm
+          --exclude-module cobra --exclude-module libsbml --exclude-module sbol2
+          --exclude-module py3Dmol --exclude-module pydicom --exclude-module h5py
+          --exclude-module plotly --exclude-module statsmodels --exclude-module nbformat
+          --exclude-module pandas --exclude-module Bio --exclude-module sympy
+          --exclude-module PyQt5 --exclude-module PySide2
+          biology.py
+      - uses: actions/upload-artifact@v4
+        with:
+          name: VIREON-windows
+          path: dist/VIREON.exe
+      - if: github.event_name == 'release'
+        uses: softprops/action-gh-release@v2
+        with:
+          files: dist/VIREON.exe
+
+  build-macos:
+    runs-on: macos-13
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+      - run: |
+          python -m pip install --upgrade pip
+          pip install numpy scipy matplotlib Pillow pyinstaller
+      - run: >
+          pyinstaller --windowed --name VIREON
+          --add-data "body_organs.png:."
+          --paths "."
+          --hidden-import biosim_part2 --hidden-import biosim_part3 --hidden-import biosim_part4
+          --collect-submodules matplotlib
+          --exclude-module rdkit --exclude-module torch --exclude-module tensorflow
+          --exclude-module sklearn --exclude-module deepchem --exclude-module esm
+          --exclude-module cobra --exclude-module libsbml --exclude-module sbol2
+          --exclude-module py3Dmol --exclude-module pydicom --exclude-module h5py
+          --exclude-module plotly --exclude-module statsmodels --exclude-module nbformat
+          --exclude-module pandas --exclude-module Bio --exclude-module sympy
+          --exclude-module PyQt5 --exclude-module PySide2
+          biology.py
+      - run: cd dist && zip -r VIREON-mac.zip VIREON.app
+      - uses: actions/upload-artifact@v4
+        with:
+          name: VIREON-macos
+          path: dist/VIREON-mac.zip
+      - if: github.event_name == 'release'
+        uses: softprops/action-gh-release@v2
+        with:
+          files: dist/VIREON-mac.zip
