@@ -93,17 +93,25 @@ In short:
 
 ## How to cite
 
-If you use VIREON in your research, please cite it via its DOI:
+If you use VIREON in your research, please cite the preprint:
 
-> VIREON — Cellular & Synthetic Biology Suite. Zenodo.
-> https://doi.org/10.5281/zenodo.23653743
+> Gevorgyan, A. (2026). *VIREON: An integrated desktop suite unifying
+> genetic-circuit design, CRISPR guide selection, metabolic modeling and
+> whole-cell simulation for synthetic biology.* Zenodo.
+> https://doi.org/10.5281/zenodo.23653956
+
+You may also cite the software archive directly:
+https://doi.org/10.5281/zenodo.23653743
 
 ```bibtex
-@software{vireon,
-  title   = {VIREON — Cellular & Synthetic Biology Suite},
-  year    = {2026},
-  doi     = {10.5281/zenodo.23653743},
-  url     = {https://doi.org/10.5281/zenodo.23653743}
+@article{vireon2026,
+  author = {Gevorgyan, Artyom},
+  title  = {VIREON: An integrated desktop suite unifying genetic-circuit
+            design, CRISPR guide selection, metabolic modeling and
+            whole-cell simulation for synthetic biology},
+  year   = {2026},
+  doi    = {10.5281/zenodo.23653956},
+  url    = {https://doi.org/10.5281/zenodo.23653956}
 }
 ```
 
@@ -201,7 +209,12 @@ python biology.py
 
 ## Как цитировать
 
-Если вы используете VIREON в своих исследованиях, ссылайтесь по DOI:
+Если вы используете VIREON в своих исследованиях, ссылайтесь на препринт:
 
-> VIREON — Cellular & Synthetic Biology Suite. Zenodo.
-> https://doi.org/10.5281/zenodo.23653743
+> Gevorgyan, A. (2026). *VIREON: An integrated desktop suite unifying
+> genetic-circuit design, CRISPR guide selection, metabolic modeling and
+> whole-cell simulation for synthetic biology.* Zenodo.
+> https://doi.org/10.5281/zenodo.23653956
+
+Также можно сослаться на архив программы:
+https://doi.org/10.5281/zenodo.23653743
