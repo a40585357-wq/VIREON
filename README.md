@@ -1,5 +1,7 @@
 # VIREON
 
+[![DOI](https://zenodo.org/badge/DOI/10.5281/zenodo.23653743.svg)](https://doi.org/10.5281/zenodo.23653743)
+
 *English below · [Русская версия ниже](#vireon--русская-версия)*
 
 **Cellular & Synthetic Biology Suite** — a desktop simulator for cellular and
@@ -86,6 +88,24 @@ In short:
   derivative products based on it.
 - **Commercial use** — only under a separate **paid** license (monthly rental).
   Contact the author.
+
+---
+
+## How to cite
+
+If you use VIREON in your research, please cite it via its DOI:
+
+> VIREON — Cellular & Synthetic Biology Suite. Zenodo.
+> https://doi.org/10.5281/zenodo.23653743
+
+```bibtex
+@software{vireon,
+  title   = {VIREON — Cellular & Synthetic Biology Suite},
+  year    = {2026},
+  doi     = {10.5281/zenodo.23653743},
+  url     = {https://doi.org/10.5281/zenodo.23653743}
+}
+```
 
 ===========================================================================
 
@@ -176,3 +196,12 @@ python biology.py
   программы или производные продукты.
 - **Коммерческое использование** — только по отдельной **платной** лицензии
   (ежемесячная аренда). По вопросам — свяжитесь с автором.
+
+---
+
+## Как цитировать
+
+Если вы используете VIREON в своих исследованиях, ссылайтесь по DOI:
+
+> VIREON — Cellular & Synthetic Biology Suite. Zenodo.
+> https://doi.org/10.5281/zenodo.23653743
